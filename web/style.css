@@ -1,0 +1,44 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: radial-gradient(circle at 20% 10%, #1b1233, #0a0616 60%);
+    color: #eae6ff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+.container { width: 100%; max-width: 780px; }
+header { text-align: center; margin-bottom: 32px; }
+h1 {
+    font-size: 2.6rem;
+    background: linear-gradient(90deg, #7f9cff, #d06cff, #ffb86c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+}
+.subtitle { color: #9c93b8; margin-top: 6px; }
+.controls { display: flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 24px; }
+.controls label { color: #b8b0d4; font-size: 1.05rem; }
+input[type="number"] { background: #1a1430; color: #eae6ff; border: 1px solid #3a2d5c; border-radius: 8px; padding: 10px 14px; font-size: 1rem; width: 160px; outline: none; }
+input[type="number"]:focus { border-color: #7f9cff; }
+button {
+    background: linear-gradient(135deg, #7f9cff, #d06cff);
+    color: #0a0616; font-weight: 700; border: none; border-radius: 8px; padding: 11px 22px; font-size: 1rem; cursor: pointer; transition: transform .15s, box-shadow .15s;
+}
+button:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(127, 156, 255, .4); }
+button:disabled { opacity: .6; cursor: wait; }
+.status { text-align: center; color: #9c93b8; min-height: 24px; margin-bottom: 18px; font-family: monospace; font-size: .95rem; }
+.results { display: flex; flex-direction: column; gap: 14px; }
+.result-row {
+    display: grid; grid-template-columns: 140px 1fr 110px; align-items: center; gap: 14px;
+    background: rgba(255, 255, 255, .03); padding: 14px 18px; border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .06); animation: slideIn .35s ease both;
+}
+.result-row.winner { border-color: #ffd166; box-shadow: 0 0 24px rgba(255, 209, 102, .25); }
+.label { font-weight: 600; font-size: 1.05rem; }
+.bar-container { background: #1a1430; border-radius: 8px; height: 22px; overflow: hidden; }
+.bar { height: 100%; width: 0; border-radius: 8px; transition: width .9s cubic-bezier(.2, .9, .3, 1); }
+.time { font-family: monospace; text-align: right; color: #b8b0d4; }
+@keyframes slideIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }

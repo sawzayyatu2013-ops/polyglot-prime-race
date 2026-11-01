@@ -1,0 +1,15 @@
+# C
+c/primes
+
+# C#
+csharp/bin/
+csharp/obj/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS / Editor
+.DS_Store
+.vscode/

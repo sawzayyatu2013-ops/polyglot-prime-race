@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>⚡ Polyglot Prime Race</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Polyglot Prime Race</h1>
+            <p class="subtitle">C · C# · Python · JavaScript — who finds the Nth prime fastest?</p>
+        </header>
+        <div class="controls">
+            <label for="n">N =</label>
+            <input id="n" type="number" value="100000" min="10" step="1000" />
+            <button id="race-btn">🏁 Race!</button>
+        </div>
+        <div id="status" class="status"></div>
+        <div id="results" class="results"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
