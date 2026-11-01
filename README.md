@@ -10,6 +10,9 @@ Each language runs its own implementation of the **Sieve of Eratosthenes**. The 
 3. Enter a number for **N** (e.g., `100000`).
 4. Click **🏁 Race!**
 5. Watch the bars fill up and see which language is the fastest! 🏆
+🚀 Running the App
+bash
+python python/server.py
 
 *Pro tip: Try `N = 10` to see startup overhead, and `N = 500000` to see raw compute power!*
 
@@ -30,7 +33,20 @@ sudo apt update
 sudo apt install build-essential dotnet-sdk-8.0 python3 python3-pip python3-venv nodejs npm
 
 # 🦎 openSUSE
-sudo zypper install -t pattern devel_basis
+🚀 Running the App
+bash
+
+python python/server.py
+
+Then open your browser to http://127.0.0.1:5000.
+🧠 The Stack
+Layer	Language	Role
+Dashboard	HTML + CSS	Beautiful UI
+Racer	JavaScript	Client-side prime finder (runs in your browser)
+Server	Python	Orchestrates the race & acts as a racer
+Racer	Node.js	Server-side JS racer
+Racer	C	Native racer (compiled with GCC)
+Racer	C# (.NET)	Managed racer (compiled with .NET SDK)sudo zypper install -t pattern devel_basis
 sudo zypper install gcc dotnet-sdk-8.0 python3 python3-pip nodejs npm
 
 # 🧙 Gentoo
@@ -50,18 +66,3 @@ python3 -m venv .venv
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 pip install flask
 
-🚀 Running the App
-bash
-
-python python/server.py
-
-Then open your browser to http://127.0.0.1:5000.
-🧠 The Stack
-Layer	Language	Role
-Dashboard	HTML + CSS	Beautiful UI
-Racer	JavaScript	Client-side prime finder (runs in your browser)
-Server	Python	Orchestrates the race & acts as a racer
-Racer	Node.js	Server-side JS racer
-Racer	C	Native racer (compiled with GCC)
-Racer	C# (.NET)	Managed racer (compiled with .NET SDK)
-EOF
