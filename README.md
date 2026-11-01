@@ -17,35 +17,36 @@ Each language runs its own implementation of the **Sieve of Eratosthenes**. The 
 
 You need **GCC**, **.NET SDK**, **Python 3**, and **Node.js** installed. Choose your OS below:
 
-Arch Linux: sudo pacman -S base-devel gcc dotnet-sdk python python-pip nodejs npm
-Fedora: sudo dnf groupinstall "Development Tools" && sudo dnf install gcc dotnet-sdk-8.0 python3 python3-pip nodejs npm
-Debian/Ubuntu: sudo apt update && sudo apt install build-essential dotnet-sdk-8.0 python3 python3-pip python3-venv nodejs npm
-OpenSUSE: sudo zypper install -t pattern devel_basis && sudo zypper install gcc dotnet-sdk-8.0 python3 python3-pip nodejs npm
-Gentoo: sudo emerge -av dev-lang/python dev-lang/nodejs dev-dotnet/dotnet-sdk dev-util/pkgconf
-Windows (via winget): winget install Microsoft.VisualStudio.2022.BuildTools && winget install Microsoft.DotNet.SDK.8 && winget install Python.Python.3.12 && winget install OpenJS.NodeJS
-Mac (via Homebrew): brew install gcc dotnet python node
+### 🐧 Arch Linux
+```bash
+sudo pacman -S base-devel gcc dotnet-sdk python python-pip nodejs npm
 
-### 🐍 Python Environment Setup (All OS)
-Once your system packages are installed, set up the Python virtual environment and install Flask: python3 -m venv .venv && source .venv/bin/activate && pip install flask (On Windows use: .venv\Scripts\activate)
+# 🎩 Fedora
+sudo dnf groupinstall "Development Tools"
+sudo dnf install gcc dotnet-sdk-8.0 python3 python3-pip nodejs npm
 
-### 🚀 Running the App
-python python/server.py
-Then open your browser to **[http://127.0.0.1:5000](http://127.0.0.1:5000)**.
+# 🟢 Ubuntu / Debian
+sudo apt update
+sudo apt install build-essential dotnet-sdk-8.0 python3 python3-pip python3-venv nodejs npm
 
-## 🧠 The Stack
+# 🦎 openSUSE
+sudo zypper install -t pattern devel_basis
+sudo zypper install gcc dotnet-sdk-8.0 python3 python3-pip nodejs npm
 
-| Layer | Language | Role |
-|-------|----------|------|
-| Dashboard | HTML + CSS | Beautiful UI |
-| Racer | JavaScript | Client-side prime finder (runs in your browser) |
-| Server | Python | Orchestrates the race & acts as a racer |
-| Racer | Node.js | Server-side JS racer |
-| Racer | C | Native racer (compiled with GCC) |
-| Racer | C# (.NET) | Managed racer (compiled with .NET SDK) |
+# 🧙 Gentoo
+sudo emerge -av dev-lang/python dev-lang/nodejs dev-dotnet/dotnet-sdk dev-util/pkgconf
 
-## 📦 Project Structure
+# 🪟 Windows (via winget)
+winget install Microsoft.VisualStudio.2022.BuildTools
+winget install Microsoft.DotNet.SDK.8
+winget install Python.Python.3.12
+winget install OpenJS.NodeJS
 
-polyglot-prime-race/ | c/ (C implementation) | csharp/ (C# implementation) | node/ (Node.js implementation) | python/ (Python implementation & Flask server) | web/ (Frontend HTML/CSS/JS) | README.md
+# 🍎 macOS (via Homebrew)
+brew install gcc dotnet python node
 
-## 🤝 Contributing
-Pull requests are welcome! If you want to add **Rust**, **Go**, or **Java** to the race, feel free to fork the repo and submit a PR.
+# 🐍 Python Environment Setup (All OS)
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+pip install flask
+EOF
