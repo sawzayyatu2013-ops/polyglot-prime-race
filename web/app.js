@@ -5,6 +5,7 @@ const resultsEl = document.getElementById('results');
 const LANGS = {
     c: { name: 'C', color: '#5a8fd8', emoji: '🔵' },
     csharp: { name: 'C#', color: '#b565d8', emoji: '🟣' },
+    node: { name: 'Node.js', color: '#68a063', emoji: '🟢' },
     python: { name: 'Python', color: '#f0c040', emoji: '🟡' },
     javascript: { name: 'JavaScript', color: '#e9b949', emoji: '🟨' },
 };

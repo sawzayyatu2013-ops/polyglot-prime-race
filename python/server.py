@@ -10,10 +10,7 @@ app = Flask(__name__, static_folder=os.path.join(ROOT, "web"), static_url_path="
 
 def ensure_built():
     subprocess.run(["make", "-C", os.path.join(ROOT, "c")], check=True)
-    subprocess.run(
-        ["dotnet", "build", "-c", "Release", os.path.join(ROOT, "csharp")],
-        check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-    )
+    subprocess.run(["dotnet", "build", "-c", "Release", os.path.join(ROOT, "csharp")], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def run_python(n):
     t0 = time.perf_counter()
@@ -25,10 +22,11 @@ def run_c(n):
     return json.loads(out)
 
 def run_csharp(n):
-    out = subprocess.check_output([
-        "dotnet", "run", "-c", "Release", "--no-build",
-        "--project", os.path.join(ROOT, "csharp"), "--", str(n)
-    ])
+    out = subprocess.check_output(["dotnet", "run", "-c", "Release", "--no-build", "--project", os.path.join(ROOT, "csharp"), "--", str(n)])
+    return json.loads(out)
+
+def run_node(n):
+    out = subprocess.check_output(["node", os.path.join(ROOT, "node", "primes.js"), str(n)])
     return json.loads(out)
 
 @app.route("/")
@@ -38,7 +36,7 @@ def index():
 @app.route("/api/race/<int:n>")
 def race(n):
     results = {}
-    for name, fn in [("c", run_c), ("csharp", run_csharp), ("python", run_python)]:
+    for name, fn in [("c", run_c), ("csharp", run_csharp), ("node", run_node), ("python", run_python)]:
         try:
             results[name] = fn(n)
         except Exception as e:
