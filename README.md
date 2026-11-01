@@ -49,4 +49,19 @@ brew install gcc dotnet python node
 python3 -m venv .venv
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 pip install flask
+
+🚀 Running the App
+bash
+
+python python/server.py
+
+Then open your browser to http://127.0.0.1:5000.
+🧠 The Stack
+Layer	Language	Role
+Dashboard	HTML + CSS	Beautiful UI
+Racer	JavaScript	Client-side prime finder (runs in your browser)
+Server	Python	Orchestrates the race & acts as a racer
+Racer	Node.js	Server-side JS racer
+Racer	C	Native racer (compiled with GCC)
+Racer	C# (.NET)	Managed racer (compiled with .NET SDK)
 EOF
