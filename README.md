@@ -51,5 +51,5 @@ python3 -m venv .venv
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 pip install flask
 
-# 🚀 Running the App
+## 🚀 Running the App
 python python/server.py
